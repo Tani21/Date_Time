@@ -1,3 +1,4 @@
+import 'package:date_and_time/pages/choose_location.dart';
 import 'package:date_and_time/pages/location.dart';
 import 'package:flutter/material.dart';
 
@@ -7,12 +8,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-   Map data = {};
+   //Map data = {};
   var loc = "";
   var flag = "";
   var time = "";
   var isDayTime = true;
   var bgImage="";
+
+  var loctwo = "";
+  var flagtwo = "";
+  var timetwo = "";
+  var isDayTimeTwo=true;
   //var bgColor="";
   
   @override
@@ -22,6 +28,11 @@ class _HomeState extends State<Home> {
     time = Location.time1;
     isDayTime = Location.yesNo;
     bgImage = isDayTime ? 'day.png' : 'night.png';
+
+    loctwo = ChooseLocation.locationn;
+    flagtwo = ChooseLocation.flagg;
+    timetwo = ChooseLocation.timee;
+    isDayTimeTwo = ChooseLocation.isDayTimee;
     //Color bgColor = isDayTime ? Colors.blue : Colors.indigo;
 
     print('loc: $loc');
@@ -29,12 +40,22 @@ class _HomeState extends State<Home> {
     print('time: $time');
     print('isDayTime: $isDayTime');
     // 
+    print('................................');
+print('loctwo: $loctwo');
+    print('flagtwo: $flagtwo');
+    print('timetwo: $timetwo');
+    print('isDayTimeTwo: $isDayTimeTwo');
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-     data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
+    loc = loc==loctwo ? loc : loctwo;
+    flag = flag==flagtwo ? flag : flagtwo;
+    time = time==timetwo ? time : timetwo;
+    isDayTime = isDayTime==isDayTimeTwo ? isDayTime : isDayTimeTwo;
+     //data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
     // print("data $data");
 
     return Scaffold(
@@ -53,14 +74,14 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 FloatingActionButton.extended(
                   onPressed: () async {
-                    dynamic result = await Navigator.pushNamed(context, '/location');
+                     await Navigator.pushNamed(context, '/location');
                     setState(() {
-                      data = {
-                        'time': result['time'],
-                        'location': result['location'],
-                        'isDayTime':result['location'],
-                        'flag':result['flag'],
-                      };
+                      
+                        time= timetwo;
+                        loc= loctwo;
+                        isDayTime=isDayTimeTwo;
+                        flag=flagtwo;
+                      
                     });
                   },
                   icon: const Icon(Icons.edit_location,
