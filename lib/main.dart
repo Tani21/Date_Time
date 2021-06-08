@@ -9,7 +9,7 @@ import 'pages/test.dart';
 void main() =>
   runApp(MaterialApp(
 
-    initialRoute: '/home',
+    initialRoute: '/location',
     routes : 
     {
       '/' : (context) => Location(),
