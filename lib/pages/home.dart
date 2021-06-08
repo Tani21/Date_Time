@@ -8,26 +8,26 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-   //Map data = {};
+  //Map data = {};
   var loc = "";
   var flag = "";
   var time = "";
   var isDayTime = true;
-  var bgImage="";
+  var bgImage = "";
 
   var loctwo = "";
   var flagtwo = "";
   var timetwo = "";
-  var isDayTimeTwo=true;
+  var isDayTimeTwo = true;
   //var bgColor="";
-  
+
   @override
   void initState() {
     loc = Location.loc1;
     flag = Location.flag1;
     time = Location.time1;
     isDayTime = Location.yesNo;
-    bgImage = isDayTime ? 'day.png' : 'night.png';
+    bgImage = isDayTime ? 'assets/day.png' : 'assets/night.png';
 
     loctwo = ChooseLocation.locationn;
     flagtwo = ChooseLocation.flagg;
@@ -39,9 +39,9 @@ class _HomeState extends State<Home> {
     print('flag: $flag');
     print('time: $time');
     print('isDayTime: $isDayTime');
-    // 
+    //
     print('................................');
-print('loctwo: $loctwo');
+    print('loctwo: $loctwo');
     print('flagtwo: $flagtwo');
     print('timetwo: $timetwo');
     print('isDayTimeTwo: $isDayTimeTwo');
@@ -51,11 +51,11 @@ print('loctwo: $loctwo');
 
   @override
   Widget build(BuildContext context) {
-    loc = loc==loctwo ? loc : loctwo;
-    flag = flag==flagtwo ? flag : flagtwo;
-    time = time==timetwo ? time : timetwo;
-    isDayTime = isDayTime==isDayTimeTwo ? isDayTime : isDayTimeTwo;
-     //data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
+    loc = loc == loctwo ? loc : loctwo;
+    flag = flag == flagtwo ? flag : flagtwo;
+    time = time == timetwo ? time : timetwo;
+    isDayTime = isDayTime == isDayTimeTwo ? isDayTime : isDayTimeTwo;
+    //data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
     // print("data $data");
 
     return Scaffold(
@@ -74,26 +74,26 @@ print('loctwo: $loctwo');
               children: <Widget>[
                 FloatingActionButton.extended(
                   onPressed: () async {
-                     await Navigator.pushNamed(context, '/location');
+                    await Navigator.pushNamed(context, '/location');
                     setState(() {
-                      
-                        time= timetwo;
-                        loc= loctwo;
-                        isDayTime=isDayTimeTwo;
-                        flag=flagtwo;
-                      
+                      time = timetwo;
+                      loc = loctwo;
+                      isDayTime = isDayTimeTwo;
+                      flag = flagtwo;
                     });
                   },
-                  icon: const Icon(Icons.edit_location,
-                  color: Colors.white,),
-                  label: const Text('Edit location',
-                  style: TextStyle(
-                    color : Colors.white,
-                  ),),
+                  icon: const Icon(
+                    Icons.edit_location,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    'Edit location',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-
                 SizedBox(height: 20),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -107,15 +107,16 @@ print('loctwo: $loctwo');
                     ),
                   ],
                 ),
-
-                SizedBox(height: 20.0,),
-
-                Text('$time',
-                style: TextStyle(
-                  fontSize: 66,
-                  color: Colors.white,
-                ),),
-
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  '$time',
+                  style: TextStyle(
+                    fontSize: 66,
+                    color: Colors.white,
+                  ),
+                ),
               ],
             ),
           ),
