@@ -1,16 +1,28 @@
-# date_and_time
+# World Clock
 
-A new Flutter project.
+[![Made with flutter](https://img.shields.io/badge/Made%20with%20-flutter-blue)](https://flutter.dev/docs/get-started/install)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+This project has been made using flutter that is a UI toolkit used to make both android and IOS applications using just one code base, that is Dart. 
 
-A few resources to get you started if this is your first Flutter project:
+This application uses API's to fetch the current time for various countries and displays them on the home screen according to the country you have selected.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+# Installation
+
+To run this application on your local machine: <br>
+ - you can `fork` this repository.
+ - clone it on your local machine
+ - install flutter from [here](https://flutter.dev/docs/get-started/install) if you haven't already
+ - on the editor that you are using, type `flutter run` on the terminal
+ - select the device or use Chrome or Edge to run the application
+ - you are good to go!
+
+
+ # License
+
+
+Copyright (c) 2021 [Tanishka Vaswani](https://github.com/Tani21)
+
+License - [GNU GPL v3](LICENSE)
